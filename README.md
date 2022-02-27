@@ -1,30 +1,16 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+# Time Manager
 
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
-# NomedoProjeto
-
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Número da Lista**: 3<br>
+**Conteúdo da Disciplina**: Greed<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 18/0015222  |  Daniela Soares de Oliveira |
+| 18/0113992  |  Lorrany Oliveira Souza |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+O Time Manager tem como objetivo ajudar a pessoa a gerenciar o dia a dia, auxiliando por meio de um algoritmo ambicioso a selecionar as tarefas certas para otimizar o seu tempo. 
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
