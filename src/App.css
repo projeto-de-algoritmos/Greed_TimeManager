@@ -1,5 +1,6 @@
 h1{
   text-align: center;  
+  font-family: 'Times New Roman', Times, serif;
 }
 body{
   background-color:cadetblue;
@@ -49,7 +50,8 @@ body{
   border-radius: 10px;
 }
 
-h4{
-  text-align: center;
+h3{
+  color: #120A8F;
+  font-family: 'Times New Roman', Times, serif;
   
 }

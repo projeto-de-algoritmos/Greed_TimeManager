@@ -4,8 +4,6 @@ import './App.css';
 function App() {
 
   const [tarefas, setarTarefas] = useState([]);
-  const [horaaInicio, setarHoraInicio] = useState([]);
-  const [horaaFinal, setarHoraFinal] = useState([]);
   const [modal, setModal] = useState(false);
 
   const salvarTarefa = () => {
@@ -17,69 +15,16 @@ function App() {
       {
         id: new Date().getTime(),
         tarefa: tarefa.value,
-        finalizada: false
-      }
-    ]);
-
-    setarHoraInicio([
-      ...horaaInicio,
-      {
-        id: new Date().getTime(),
         horaInicio: horaInicio.value,
-        finalizada: false
-      }
-    ]);
-
-    setarHoraFinal([
-      ...horaaFinal,
-      {
-        id: new Date().getTime(),
         horaFinal: horaFinal.value,
         finalizada: false
       }
     ]);
-
     setModal(false);
 
   }
   const abrirModal = () => {
     setModal(!modal);
-  }
-
-
-  const marcarConcluida = (id) => {
-    let novasTarefas = tarefas.filter(function (val) {
-      if (val.id == id) {
-        val.finalizada = true;
-      }
-      return val;
-    })
-
-    setarTarefas(novasTarefas);
-
-  }
-
-  const marcarConcluidaHoraI = (id) => {
-    let novasTarefasHI = horaaInicio.filter(function (val) {
-      if (val.id == id) {
-        val.finalizada = true;
-      }
-      return val;
-    })
-
-    setarTarefas(novasTarefasHI);
-
-  }
-  const marcarConcluidaHoraF = (id) => {
-    let novasTarefasHF = horaaFinal.filter(function (val) {
-      if (val.id == id) {
-        val.finalizada = true;
-      }
-      return val;
-    })
-
-    setarTarefas(novasTarefasHF);
-
   }
   return (
     <div className="App">
@@ -104,42 +49,12 @@ function App() {
       <div onClick={() => abrirModal()} className='addTarefas'>
       </div>
       <div className='boxTarefas'>
-        <h3>Tarefas que desejo realizar durante o dia:</h3>
+        <h3>Tarefas que desejo realizar durante o dia</h3>
         {
           tarefas.map((val) => {
-            if (!val.finalizada) {
-              return (
-                <p onClick={() => marcarConcluida(val.id)}> Tarefa: {val.tarefa}</p>
-              )
-            } else {
-              return (
-                <p onClick={() => marcarConcluida(val.id)} style={{ textDecoration: 'line-throgh' }}>Tarefa: {val.tarefas}</p>
-              );
-            }
+            return <p>Tarefa a ser realizada: {val.tarefa} | horário inicio: {val.horaInicio} | horário final: {val.horaFinal}</p>,
+            <p><b>- Tarefa a ser realizada:</b> {val.tarefa}<b>horário inicio:</b> {val.horaInicio}   <b>horário final:</b> {val.horaFinal}</p>
           })}
-        {horaaInicio.map((val) => {
-          if (!val.finalizada) {
-            return (
-              <p onClick={() => marcarConcluidaHoraI(val.id)}>Hora inicio: {val.horaInicio}</p>
-            )
-          } else {
-            return (
-              <p onClick={() => marcarConcluidaHoraI(val.id)} style={{ textDecoration: 'line-throgh' }}>Hora inicio: {val.horaInicio}</p>
-            );
-          }
-        })}
-        {horaaFinal.map((val) => {
-          if (!val.finalizada) {
-            return (
-              <p onClick={() => marcarConcluidaHoraF(val.id)}>Hora final: {val.horaFinal}</p>
-            )
-          } else {
-            return (
-              <p onClick={() => marcarConcluidaHoraF(val.id)} style={{ textDecoration: 'line-throgh' }}>Hora final: {val.horaFinal}</p>
-            );
-          }
-        })
-        }
 
       </div>
 
