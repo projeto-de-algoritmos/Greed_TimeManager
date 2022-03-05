@@ -81,3 +81,16 @@ h4{
 .buttonAdicionar{
   margin-right: 10px;
 }
+.name{
+  display: flex;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;  
+  font-size: 100px;
+  margin-top:250px;
+
+}
+.titulo{
+  display: flex;
+  justify-content: center;
+}

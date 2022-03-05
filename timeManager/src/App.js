@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function tarefaCompleta(tarefa, horaInicio, horaFinal) {
@@ -11,27 +11,29 @@ function App() {
 
   const [modal, setModal] = useState(false);
   var listaTarefas = [];
-  var listaTarefaFinal = [];
 
 
   const scheduling = () => {
     console.log(listaTarefas);
 
-    // listaTarefas.sort(ordenaPorHoraFinal);
-    // var aux = 0;
-    // var listaTarefas_final = [];
-
-
-    // listaTarefas_final.push(listaTarefas[listaTarefas.length - 1]);
-    // for (var i = 0; i < listaTarefas.length(); i++) {
-    //   if (listaTarefas_final[aux].horaFinal <= listaTarefas[i].horaInicio) {
-    //     listaTarefas_final.push(listaTarefas[i]);
-    //     aux++;
-    //   }
-    // }
-    // for (var i = 0; listaTarefas_final.length(); i++) {
-    //   <p>{listaTarefas_final[i].tarefa}</p>
-    // }
+    listaTarefas.sort(ordenaPorHoraFinal);
+    var aux = 0;
+    var listaTarefas_final = [];
+    
+    var horaFinal_aux = listaTarefas[listaTarefas.length - 1].horaFinal;
+    console.log(horaFinal_aux);
+    if(listaTarefas.length>1){
+     for (var i = 0; i < listaTarefas.length; i++) {
+        if (listaTarefas[i].horaInicio>=horaFinal_aux) {
+          listaTarefas_final.push(listaTarefas[i]);
+          horaFinal_aux = listaTarefas[i].horaFinal;
+          aux++;
+        }
+      }
+      for (var j = 0; j<listaTarefas_final.length; j++) {
+        console.log(listaTarefas_final[j].tarefa);
+      }
+    }
   }
   
   function ordenaPorHoraFinal(a, b) {
@@ -45,12 +47,17 @@ function App() {
     var tarefaCompleta_aux = new tarefaCompleta(tarefa.value, horaInicio.value, horaFinal.value);
 
     listaTarefas.push(tarefaCompleta_aux);
+    
     console.log(listaTarefas);
     alert("Tarefa Adicionada");
+    scheduling();
+
 
   }
   const sairTarefa = () => {
-    setModal(false);
+    
+    setModal(!modal);
+
   }
   const abrirModal = () => {
     setModal(!modal);
@@ -77,17 +84,8 @@ function App() {
           :
           
       <div>
-      <h1>Time Manager</h1>
+      <div className='titulo'><p className='name'>Time Manager</p></div>
       <div onClick={() => abrirModal()} className='addTarefas'>
-      </div>
-      <div className='boxTarefas'>
-        <h3>Tarefas que desejo realizar durante o dia</h3>
-        {listaTarefas.forEach(e=>{
-          return <p>{e.horaFinal}</p>;
-        })}
-      <div className='boxButton'>
-        <button className='buttonAtivaScheduling' onClick={() => scheduling()}>Saber quais tarefas realizar</button>
-      </div>
       </div>
       </div>
       }
