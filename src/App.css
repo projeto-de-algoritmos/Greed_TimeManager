@@ -10,7 +10,7 @@ body{
   width: 80%;
   max-width: 800px;
   background-color: white;
-  padding:30px 50px;
+  padding:280px 50px;
   margin: 10px auto;
   border-radius: 10px;
 }
@@ -53,5 +53,15 @@ body{
 h3{
   color: #120A8F;
   font-family: 'Times New Roman', Times, serif;
-  
+  margin-top:-230px;
+}
+
+.buttonAtivaScheduling{
+  position:absolute;
+  margin-top:420px;
+}
+.boxButton{
+  display: flex;
+  justify-content: center;
+  margin-top:5px;
 }

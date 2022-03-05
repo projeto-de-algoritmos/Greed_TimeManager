@@ -26,6 +26,10 @@ function App() {
   const abrirModal = () => {
     setModal(!modal);
   }
+
+  const scheduling = () => {
+    setModal(!modal);
+  }
   return (
     <div className="App">
       {
@@ -35,9 +39,9 @@ function App() {
               <h4>TAREFA</h4>
               <p>Informe sua tarefa aqui</p>
               <input id="content-tarefa" type="text" />
-              <p>Informe o horario de inicio</p>
+              <p>Informe o horario de inicio (hh:mm)</p>
               <input id="content-tarefa-horario-inicio" type="text" />
-              <p>Informe o horario final</p>
+              <p>Informe o horario final (hh:mm)</p>
               <input id="content-tarefa-horario-fim" type="text" />
               <button className="buttonAdicionar" onClick={() => salvarTarefa()}>Adicionar</button>
             </div>
@@ -52,12 +56,12 @@ function App() {
         <h3>Tarefas que desejo realizar durante o dia</h3>
         {
           tarefas.map((val) => {
-            return <p>Tarefa a ser realizada: {val.tarefa} | horário inicio: {val.horaInicio} | horário final: {val.horaFinal}</p>,
-            <p><b>- Tarefa a ser realizada:</b> {val.tarefa}<b>horário inicio:</b> {val.horaInicio}   <b>horário final:</b> {val.horaFinal}</p>
+            return <p>Tarefa a ser realizada: {val.tarefa} | horário inicio: {val.horaInicio} | horário final: {val.horaFinal}</p>
           })}
-
+      <div className='boxButton'>
+        <button className='buttonAtivaScheduling' onClick={() => scheduling()}>Saber quais tarefas realizar</button>
       </div>
-
+      </div>
     </div>
   );
 }
