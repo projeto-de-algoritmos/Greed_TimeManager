@@ -17,23 +17,20 @@ function App() {
   //função que implementa o intervalo de scheduling
   const scheduling = () => {
     var listaTarefas_final = [];
-    var aux = 0;
 
     if(listaTarefas.length>1){
       
       listaTarefas.sort(ordenaPorHoraFinal);
 
       console.log(listaTarefas);
-
-      listaTarefas_final.push(listaTarefas[listaTarefas.length - 1]);
-
-      for (var i = 0; i < listaTarefas.length - 1; i++) {
-
-        if (listaTarefas[i].horaInicio<=listaTarefas_final[aux].horaFinal) {
+      var hora_final = 0;
+      var aux = -1;
+      for (var i = 0; i < listaTarefas.length ; i++) {
+        if (listaTarefas[i].horaInicio>=hora_final) {
           listaTarefas_final.push(listaTarefas[i]);
+          hora_final = listaTarefas_final[aux+1].horaInicio;
           aux++;
         }
-
       }
       listaTarefas_final.sort(ordenaPorHoraFinal);
       document.getElementById("display").innerHTML = JSON.stringify(listaTarefas_final, ['tarefa']);

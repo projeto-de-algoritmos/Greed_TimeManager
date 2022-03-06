@@ -17,6 +17,12 @@ O Time Manager é uma aplicação que tem como objetivo demostrar o funcionament
 Esta primeira imagem demostra a tela de início da aplicação.
 ![imagem 3](/imagens/tela2.png)
 Esta segunda imagem demostra a tela que aparece quando se clica na bolinha branca localizada no canto inferior à direita, como demostra na imagem 1.
+![imagem 3](/imagens/tela3.png)
+Esta terceira imagem demostra o resultado do seguinte teste:
+- Tarefa: dormir inicio:1 termino: 10
+- Tarefa: estudar inicio:2 termino: 5
+- Tarefa: treinar inicio:6 termino: 8</br>
+O resultado foi estudar e treinar torna seu dia mais produtivo, pois você consegue fazer as duas coisas durante o mesmo tempo em que você só estaria dormindo. 
 ## Instalação 
 **Linguagem**: JavaScript<br>
 **Framework**: React<br>
@@ -31,3 +37,5 @@ Para conseguir rodar este projeto, siga os passos abaixo:
 #### 4- Rode o seguinte comando:  npm install.
 #### 5- Por último rode: npm start.
 
+## Outros
+Observação: o resultado só aparece depois de adicionar pelo menos duas tarefas.
