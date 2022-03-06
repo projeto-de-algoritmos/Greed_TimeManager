@@ -10,22 +10,24 @@
 | 18/0113992  |  Lorrany Oliveira Souza |
 
 ## Sobre 
-O Time Manager tem como objetivo ajudar a pessoa a gerenciar o dia a dia, auxiliando por meio de um algoritmo ambicioso a selecionar as tarefas certas para otimizar o seu tempo. 
+O Time Manager é uma aplicação que tem como objetivo demostrar o funcionamento do algoritmo ambicioso conhecido como intervalo de scheduling. Está é uma simples aplicação, em que você imforma as tarefas que você deseja realizar, e ele vai te retornar quais você deve piorizar para deixar seu dia mais produtivo.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
-
+![imagem 1](/imagens/tela1.png)
+Esta primeira imagem demostra a tela de início da aplicação.
+![imagem 3](/imagens/tela2.png)
+Esta segunda imagem demostra a tela que aparece quando se clica na bolinha branca localizada no canto inferior à direita, como demostra na imagem 1.
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: JavaScript<br>
+**Framework**: React<br>
+
+Para rodar o projeto é necessário a instalação do framework React.
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
-
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
-
-
-
+Para conseguir rodar este projeto, siga os passos abaixo: 
+#### 1- instale o react.
+#### 2- Clone esse repositório.
+#### 3- Entre na pasta timeManager.
+#### 4- Rode o seguinte comando:  npm install.
+#### 5- Por último rode: npm start.
 

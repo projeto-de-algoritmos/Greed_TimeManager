@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
+//função criada para representar uma tarefa na hora de ser instanciada
 function tarefaCompleta(tarefa, horaInicio, horaFinal) {
   this.tarefa = tarefa;
   this.horaInicio = horaInicio;
@@ -9,37 +10,42 @@ function tarefaCompleta(tarefa, horaInicio, horaFinal) {
 
 function App() {
 
+  //cria constante para criar um modal que possibilita a troca de telas
   const [modal, setModal] = useState(false);
   var listaTarefas = [];
 
-
+  //função que implementa o intervalo de scheduling
   const scheduling = () => {
-    console.log(listaTarefas);
-
-    listaTarefas.sort(ordenaPorHoraFinal);
-    var aux = 0;
     var listaTarefas_final = [];
-    
-    var horaFinal_aux = listaTarefas[listaTarefas.length - 1].horaFinal;
-    console.log(horaFinal_aux);
+    var aux = 0;
+
     if(listaTarefas.length>1){
-     for (var i = 0; i < listaTarefas.length; i++) {
-        if (listaTarefas[i].horaInicio>=horaFinal_aux) {
+      
+      listaTarefas.sort(ordenaPorHoraFinal);
+
+      console.log(listaTarefas);
+
+      listaTarefas_final.push(listaTarefas[listaTarefas.length - 1]);
+
+      for (var i = 0; i < listaTarefas.length - 1; i++) {
+
+        if (listaTarefas[i].horaInicio<=listaTarefas_final[aux].horaFinal) {
           listaTarefas_final.push(listaTarefas[i]);
-          horaFinal_aux = listaTarefas[i].horaFinal;
           aux++;
         }
+
       }
-      for (var j = 0; j<listaTarefas_final.length; j++) {
-        console.log(listaTarefas_final[j].tarefa);
-      }
+      listaTarefas_final.sort(ordenaPorHoraFinal);
+      document.getElementById("display").innerHTML = JSON.stringify(listaTarefas_final, ['tarefa']);
     }
   }
-  
+
+  //função que ordena o array pela hora final
   function ordenaPorHoraFinal(a, b) {
     return a.horaFinal - b.horaFinal;
   }
 
+  //função que pega os dados da tela e armazade em um array
   const salvarTarefa = () => {
     var tarefa = document.getElementById('content-tarefa');
     var horaInicio = document.getElementById('content-tarefa-horario-inicio');
@@ -48,12 +54,11 @@ function App() {
 
     listaTarefas.push(tarefaCompleta_aux);
     
-    console.log(listaTarefas);
     alert("Tarefa Adicionada");
     scheduling();
-
-
   }
+
+  //função para sair da modal da tela de informações, além disso, ele reseta o valor do array.
   const sairTarefa = () => {
     
     setModal(!modal);
@@ -62,6 +67,7 @@ function App() {
   const abrirModal = () => {
     setModal(!modal);
   }
+  //parte em html da aplicação
   return (
     <div className="App">
       {
@@ -75,6 +81,10 @@ function App() {
               <input id="content-tarefa-horario-inicio" type="text" />
               <p>Informe o horario final (hh)</p>
               <input id="content-tarefa-horario-fim" type="text" />
+              <div className='resultados'>
+                <p>Tarefas a serem realizadas:</p>
+                <pre id="display"></pre>
+              </div>              
               <div className='button'>
                 <button className="buttonAdicionar" onClick={() => salvarTarefa()}>Adicionar</button>
                 <button onClick={() => sairTarefa()}>Sair</button>
@@ -94,4 +104,3 @@ function App() {
   );
 }
 export default App;
-
