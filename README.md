@@ -10,7 +10,7 @@
 | 18/0113992  |  Lorrany Oliveira Souza |
 
 ## Sobre 
-O Time Manager é uma aplicação que tem como objetivo demostrar o funcionamento do algoritmo ambicioso conhecido como intervalo de scheduling. Está é uma simples aplicação, em que você imforma as tarefas que você deseja realizar, e ele vai te retornar quais você deve piorizar para deixar seu dia mais produtivo.
+O Time Manager é uma aplicação que tem como objetivo demostrar o funcionamento do algoritmo ambicioso conhecido como intervalo de scheduling. Está é uma simples aplicação, em que você informa as tarefas que você deseja realizar, e ele vai te retornar quais você deve piorizar para deixar seu dia mais produtivo.
 
 ## Screenshots
 ![imagem 1](/imagens/tela1.png)
@@ -23,6 +23,12 @@ Esta terceira imagem demostra o resultado do seguinte teste:
 - Tarefa: estudar inicio:2 termino: 5
 - Tarefa: treinar inicio:6 termino: 8</br>
 O resultado foi estudar e treinar torna seu dia mais produtivo, pois você consegue fazer as duas coisas durante o mesmo tempo em que você só estaria dormindo. 
+
+## Apresentação do projeto
+#### 1- [Video de apresentação do projeto Time Manager via youtube](https://youtu.be/fmyYW6tdNnw)
+#### 2- [Video de apresentação do projeto Time Manager via drive](https://drive.google.com/file/d/1NELujx6RopKudTdNzeoUKjYaYEdMj7Bp/view?usp=sharing)
+
+
 ## Instalação 
 **Linguagem**: JavaScript<br>
 **Framework**: React<br>
